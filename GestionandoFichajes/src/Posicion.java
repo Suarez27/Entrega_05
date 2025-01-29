@@ -1,3 +1,5 @@
-public class Posicion {
+public enum Posicion {
+
+    Portero, Defensa, Delantero;
     
 }
