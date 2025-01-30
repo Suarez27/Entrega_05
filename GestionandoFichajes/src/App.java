@@ -22,12 +22,13 @@ public class App {
         Entrenador Carlo_Ancelotti = new Entrenador("Carlo Ancelotti", Formacion._333);
         Entrenador Diego_Simeone = new Entrenador("Diego Simeone", Formacion._443);
 
-        Jugador j1 = new Jugador("Anthony", generarFechaNacimiento(1990, 10, 15), Posicion.Delantero, 10, Traspaso.Sin_solicitar);
-        Jugador j2 = new Jugador("Messi", generarFechaNacimiento(1990, 10, 15), Posicion.Delantero, 10, Traspaso.Aprobado_por_entrenador);
-        Jugador j3 = new Jugador("Ronaldo", generarFechaNacimiento(1990, 10, 15), Posicion.Delantero, 7, Traspaso.Aprobado_por_presidente);
-        Jugador j4 = new Jugador("Koke", generarFechaNacimiento(1990, 10, 15), Posicion.Delantero, 9, Traspaso.Rechazado_por_entrenador);
-        Jugador j5 = new Jugador("Estefano", generarFechaNacimiento(1990, 10, 15), Posicion.Defensa, 4, Traspaso.Sin_solicitar);
-        Jugador j6 = new Jugador("Dibu", generarFechaNacimiento(1990, 10, 15), Posicion.Portero, 1, Traspaso.Solicitado);
+        Jugador j1 = new Jugador("Anthony", null, "España", Posicion.Delantero, 10, Traspaso.Aprobado_por_entrenador);
+        Jugador j2 = new Jugador("Messi", null, "Argentina", Posicion.Delantero, 10, Traspaso.Aprobado_por_entrenador);
+        Jugador j3 = new Jugador("Ronaldo", null, "Brasil", Posicion.Delantero, 7, Traspaso.Rechazado_por_entrenador);
+        Jugador j4 = new Jugador("Koke", null, "España", Posicion.Delantero, 9, Traspaso.Aprobado_por_presidente);
+        Jugador j5 = new Jugador("Stefano", null, "Limatambo", Posicion.Defensa, 4, Traspaso.Sin_solicitar);
+        Jugador j6 = new Jugador("Dibu", null, "Argentina", Posicion.Portero, 1, Traspaso.Solicitado);
+
 
         System.out.println(j1);
         ArrayList<Jugador> jugadoresBarcelona = new ArrayList<Jugador>();
