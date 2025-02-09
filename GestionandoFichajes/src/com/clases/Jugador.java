@@ -14,6 +14,8 @@ public class Jugador {
 
     private Equipo Equipo_id;
 
+    private static int totalJugadores = 0;
+
     public Jugador(String nombreJugador, Date fechaNacimientoJugador, String paisJugador, Posicion posicionJugador,
             int dorsalJugador,
             Traspaso traspasoJugador, Equipo equipoJugador) {
@@ -57,6 +59,11 @@ public class Jugador {
             System.out.println("Error: El traspaso no debe ser Null");
             this.Traspaso = Traspaso.Sin_solicitar;
         }
+        totalJugadores++;
+    }
+
+    public static int getTotalJugadores() {
+        return totalJugadores;
     }
 
     public String getNombre() {
@@ -141,5 +148,13 @@ public class Jugador {
         } else {
             System.out.println("No puede ser nulo");
         }
+    }
+
+    @Override
+    public String toString() {
+        String equipoNombre = (Equipo_id != null) ? Equipo_id.getNombre() : "Sin equipo";
+        return "Jugador [Nombre=" + Nombre + ", FechaNacimiento=" + FechaNacimiento + ", Pais=" + Pais + ", Posicion="
+                + Posicion + ", Dorsal=" + Dorsal + ", Traspaso=" + Traspaso + ", Equipo_id=" + equipoNombre
+                + "]";
     }
 }

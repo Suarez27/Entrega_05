@@ -78,5 +78,16 @@ public class App {
         j4.setEquipo_id(Team2);
         j5.setEquipo_id(Team3);
         j6.setEquipo_id(Team3);
+
+        System.out.println(Team1);
+        System.out.println(p1);
+        System.out.println(e1);
+        System.out.println(j1);
+
+        // CONTEO DE OBJETOS CREADOS PARA CADA CLASE
+        System.out.println("Total de jugadores creados: " + Jugador.getTotalJugadores());
+        System.out.println("Total de presidentes creados: " + Presidente.getTotalPresidentes());
+        System.out.println("Total de entrenadores creados: " + Entrenador.getTotalEntrenadores());
+        System.out.println("Total de equipos creados: " + Equipo.getTotalEquipos());
     }
 }

@@ -12,6 +12,8 @@ public class Equipo {
     private Entrenador Entrenador_id;
     private ArrayList<Jugador> Jugadores_lista;
 
+    private static int totalEquipos = 0;
+
     public Equipo(String nombre_equipo, String abreviatura_equipo, Presidente presidente_id, Entrenador entrenador_id,
     ArrayList jugadores_lista) {
         if (nombre_equipo != null) {
@@ -27,6 +29,11 @@ public class Equipo {
             System.out.println("Error: La abreviatura no debe ser Null");
             this.Abreviatura = "Desconocido";
         }
+        totalEquipos++;
+    }
+
+    public static int getTotalEquipos(){
+        return totalEquipos;
     }
 
     public String getNombre() {
@@ -87,6 +94,14 @@ public class Equipo {
         } else {
             System.out.println("Error, lista jugadores no valido");
         }
+    }
+
+    @Override
+    public String toString() {
+        String equipoPresidente = (Presidente_id != null) ? Presidente_id.getNombre() : "Sin Presidente";
+        String equipoEntrenador = (Entrenador_id != null) ? Entrenador_id.getNombre() : "Sin Entrenador";
+        return "Equipo [Nombre=" + Nombre + ", Abreviatura=" + Abreviatura + ", Presidente_id=" + equipoPresidente
+                + ", Entrenador_id=" + equipoEntrenador + ", Jugadores_lista=" + Jugadores_lista + "]";
     }
 
 }

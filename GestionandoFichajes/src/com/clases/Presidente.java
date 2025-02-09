@@ -8,6 +8,8 @@ public class Presidente {
     private String Nombre;
 
     private Equipo Equipo_id;
+
+    private static int totalPresidentes = 0;
     
     public Presidente (String dni_presidente, String nombre_presidente, Equipo equipo_presidente){
         if (dni_presidente != null) {
@@ -23,7 +25,13 @@ public class Presidente {
             System.out.println("Error: El nombre no debe ser Null");
             this.Nombre = "Desconocido";
         }
+        totalPresidentes++;
     }
+
+    public static int getTotalPresidentes() {
+        return totalPresidentes;
+    }
+
     public String getDNI() {
         return DNI;
     }
@@ -60,6 +68,11 @@ public class Presidente {
         }
     }
 
+    @Override
+    public String toString() {
+        String presidenteEquipo = (Equipo_id != null) ? Equipo_id.getNombre() : "Sin equipo";
+        return "Presidente [DNI=" + DNI + ", Nombre=" + Nombre + ", Equipo_id=" + presidenteEquipo + "]";
+    }
 
 }
     

@@ -8,6 +8,8 @@ public class Entrenador {
 
     private Equipo Equipo_id;
 
+    private static int totalEntrenadores = 0;
+
     public Entrenador(String nombre_entrenador, Formacion formacionEntrenador, Equipo equipoEntrenador) {
         if (nombre_entrenador != null) {
             this.Nombre = nombre_entrenador;
@@ -22,6 +24,11 @@ public class Entrenador {
             System.out.println("Error: la formacion es incorrecta");
             this.Formacion = Formacion.ninguna;
         }
+        totalEntrenadores++;
+    }
+
+    public static int getTotalEntrenadores() {
+        return totalEntrenadores;
     }
 
     public String getNombre() {
@@ -58,5 +65,12 @@ public class Entrenador {
         } else {
             System.out.println("Error, equipo no valido");
         }
+    }
+
+    @Override
+    public String toString() {
+        String entrenadorEquipo = (Equipo_id != null) ? Equipo_id.getNombre() : "Sin equipo";
+        return "Entrenador [Nombre=" + Nombre + ", Formacion=" + Formacion + ", Equipo_id=" + entrenadorEquipo
+                + "]";
     }
 }
