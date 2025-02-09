@@ -78,11 +78,63 @@ public class App {
         j4.setEquipo_id(Team2);
         j5.setEquipo_id(Team3);
         j6.setEquipo_id(Team3);
-
+        
+        //Souts para probar ToString
         System.out.println(Team1);
         System.out.println(p1);
         System.out.println(e1);
         System.out.println(j1);
+        
+        System.out.println();
+
+        // -- TRASPASOS, ELIMIACION Y AGREGACION DE JUGADORES --
+        System.out.println("---SOLICITUDES DE TRASPASOS---");
+        j1.setTraspaso(Traspaso.Solicitado);
+        j2.setTraspaso(Traspaso.Solicitado);
+        j3.setTraspaso(Traspaso.Solicitado);
+        System.out.println(j1);
+        System.out.println(j2);
+        System.out.println(j3);
+
+        System.out.println();
+
+        // DECISION DE ENTRENADOR
+        System.out.println("---PROCESO DE DECISION DEL ENTRENADOR---");
+        Team1.decidirTraspasoEntrenador(j1, true);
+        Team1.decidirTraspasoEntrenador(j2, false);
+        Team1.decidirTraspasoEntrenador(j3, true);
+
+        System.out.println();
+
+        // DECISION DEL PRESIDENTE DE BARCELONA
+        System.out.println("---PROCESO DE DECISION DEL PRESIDENTE---");
+        Team1.decidirTraspasoPresidente(j1, true);
+        Team1.decidirTraspasoPresidente(j2, true);
+
+        System.out.println();
+
+        // RESETEO DE ESTADOS DE TRASPASO
+        System.out.println("---PROCESO DE RESETEO DEL EQUIPO---");
+        j1.setEquipo_id(Team2);
+        Team1.resetearEstadosTraspaso();
+        System.out.println(j1);
+        System.out.println(j2);
+
+        System.out.println();
+
+        // ELIMINAR Y AGREGAR A JUGADOR
+        System.out.println("---PROCESO DE ELIMINACION DE JUGADOR---");
+        Team1.eliminarJugador(j1);
+        System.out.println(Team1);
+
+        System.out.println();
+
+        System.out.println("GESTIONANDO JUGADORES...");
+        System.out.println("---PROCESO DE AGREGACION DE JUGADOR---");
+        Team2.agregarJugador(j1);
+        System.out.println(Team2);
+
+        System.out.println();
 
         // CONTEO DE OBJETOS CREADOS PARA CADA CLASE
         System.out.println("Total de jugadores creados: " + Jugador.getTotalJugadores());

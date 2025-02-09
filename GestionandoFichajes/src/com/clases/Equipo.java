@@ -32,6 +32,58 @@ public class Equipo {
         totalEquipos++;
     }
 
+    public void resetearEstadosTraspaso() {
+        for (Jugador jugador : Jugadores_lista) {
+            if (jugador.getTraspaso() == Traspaso.Rechazado_por_entrenador ||
+                jugador.getTraspaso() == Traspaso.Rechazado_por_presidente) {
+                jugador.setTraspaso(Traspaso.Sin_solicitar);
+            }
+        }
+        System.out.println("Se han reseteado los estados de traspaso en el equipo " + Nombre);
+    }
+
+    public void decidirTraspasoEntrenador(Jugador jugador, boolean acepta) {
+        if (jugador.getEquipo_id() != this) {
+            System.out.println("Error: El entrenador de " + Nombre + " no puede decidir sobre jugadores de otro equipo.");
+            return;
+        }
+
+        if (jugador.getTraspaso() == Traspaso.Solicitado) {
+            jugador.setTraspaso(acepta ? Traspaso.Aprobado_por_entrenador : Traspaso.Rechazado_por_entrenador);
+            System.out.println("El entrenador ha decidido el traspaso de " + jugador.getNombre() + ": " + jugador.getTraspaso());
+        } else {
+            System.out.println("No se puede decidir el traspaso de " + jugador.getNombre() + ", aun no ha sido solicitado.");
+        }
+    }
+
+    public void decidirTraspasoPresidente(Jugador jugador, boolean acepta) {
+        if (jugador.getEquipo_id() != this) {
+            System.out.println("Error: El presidente de " + Nombre + " no puede decidir sobre jugadores de otro equipo.");
+            return;
+        }
+
+        if (jugador.getTraspaso() == Traspaso.Aprobado_por_entrenador) {
+            jugador.setTraspaso(acepta ? Traspaso.Aprobado_por_presidente : Traspaso.Rechazado_por_presidente);
+            System.out.println("El presidente ha decidido el traspaso de " + jugador.getNombre() + ": " + jugador.getTraspaso());
+        } else {
+            System.out.println("El presidente no puede decidir el traspaso de " + jugador.getNombre() + " porque el entrenador aun no lo ha aprobado.");
+        }
+    }
+
+    public void agregarJugador(Jugador jugador) {
+        if (jugador != null && !Jugadores_lista.contains(jugador)) {
+            Jugadores_lista.add(jugador);
+            jugador.setEquipo_id(this);
+        }
+    }
+
+    public void eliminarJugador(Jugador jugador) {
+        if (jugador != null && Jugadores_lista.contains(jugador)) {
+            Jugadores_lista.remove(jugador);
+            jugador.setEquipo_id(null);
+        }
+    }
+
     public static int getTotalEquipos(){
         return totalEquipos;
     }
