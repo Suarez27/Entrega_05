@@ -20,4 +20,9 @@ public class Jugador {
         Dorsal = dorsalJugador;
         Traspaso = traspasoJugador;
 }
+
+    
+
+
 }
+

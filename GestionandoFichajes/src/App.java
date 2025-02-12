@@ -10,6 +10,7 @@ public class App {
         return cal.getTime();
     }
     public static void main(String[] args) throws Exception {
+        
         Equipo Barcelona = new Equipo("Barcelona", "FBC");
         Equipo Real_Madrid = new Equipo("Real Madrid", "RMCF");
         Equipo Atletico_Del_Madrid = new Equipo("Atletico Del Madrid", "ATM");
@@ -22,12 +23,12 @@ public class App {
         Entrenador Carlo_Ancelotti = new Entrenador("Carlo Ancelotti", Formacion._333);
         Entrenador Diego_Simeone = new Entrenador("Diego Simeone", Formacion._443);
 
-        Jugador j1 = new Jugador("Anthony", null, "España", Posicion.Delantero, 10, Traspaso.Aprobado_por_entrenador);
-        Jugador j2 = new Jugador("Messi", null, "Argentina", Posicion.Delantero, 10, Traspaso.Aprobado_por_entrenador);
-        Jugador j3 = new Jugador("Ronaldo", null, "Brasil", Posicion.Delantero, 7, Traspaso.Rechazado_por_entrenador);
-        Jugador j4 = new Jugador("Koke", null, "España", Posicion.Delantero, 9, Traspaso.Aprobado_por_presidente);
-        Jugador j5 = new Jugador("Stefano", null, "Limatambo", Posicion.Defensa, 4, Traspaso.Sin_solicitar);
-        Jugador j6 = new Jugador("Dibu", null, "Argentina", Posicion.Portero, 1, Traspaso.Solicitado);
+        Jugador j1 = new Jugador("Anthony", generarFechaNacimiento(1990, 10, 15), "España", Posicion.Delantero, 10, Traspaso.Aprobado_por_entrenador);
+        Jugador j2 = new Jugador("Messi", generarFechaNacimiento(1974, 2, 11), "Argentina", Posicion.Delantero, 10, Traspaso.Aprobado_por_entrenador);
+        Jugador j3 = new Jugador("Ronaldo", generarFechaNacimiento(1935, 5, 3), "Brasil", Posicion.Delantero, 7, Traspaso.Rechazado_por_entrenador);
+        Jugador j4 = new Jugador("Koke", generarFechaNacimiento(1994, 10, 5), "España", Posicion.Delantero, 9, Traspaso.Aprobado_por_presidente);
+        Jugador j5 = new Jugador("Stefano", generarFechaNacimiento(1990, 12, 15), "Limatambo", Posicion.Defensa, 4, Traspaso.Sin_solicitar);
+        Jugador j6 = new Jugador("Dibu", generarFechaNacimiento(1995, 9, 15), "Argentina", Posicion.Portero, 1, Traspaso.Solicitado);
 
 
         System.out.println(j1);
