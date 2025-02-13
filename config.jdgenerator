@@ -1,0 +1,116 @@
+==== CONFIGS ====		
+{
+    "base_path": "/Users/anthony/Entrega_05",
+    "out": "/Users/anthony/Entrega_05/javadoc",
+    "javadoc_executable": "/Library/Java/JavaVirtualMachines/jdk-23.jdk/Contents/Home/bin/javadoc",
+    "exclude": [],
+    "raw_params": ""
+}
+
+==== COMMAND ====
+"/Library/Java/JavaVirtualMachines/jdk-23.jdk/Contents/Home/bin/javadoc" 
+	-sourcepath "/Users/anthony/Entrega_05" 
+	-d "/Users/anthony/Entrega_05/javadoc" 
+	"/Users/anthony/Entrega_05/GestionandoFichajes/src/com/App.java"
+	"/Users/anthony/Entrega_05/GestionandoFichajes/src/com/clases/Entrenador.java"
+	"/Users/anthony/Entrega_05/GestionandoFichajes/src/com/clases/Equipo.java"
+	"/Users/anthony/Entrega_05/GestionandoFichajes/src/com/clases/Jugador.java"
+	"/Users/anthony/Entrega_05/GestionandoFichajes/src/com/clases/Presidente.java"
+	"/Users/anthony/Entrega_05/GestionandoFichajes/src/com/enums/Formacion.java"
+	"/Users/anthony/Entrega_05/GestionandoFichajes/src/com/enums/Posicion.java"
+	"/Users/anthony/Entrega_05/GestionandoFichajes/src/com/enums/Traspaso.java"
+
+
+==== JAVADOC OUTPUT ====
+Loading source file /Users/anthony/Entrega_05/GestionandoFichajes/src/com/App.java...
+Loading source file /Users/anthony/Entrega_05/GestionandoFichajes/src/com/clases/Entrenador.java...
+Loading source file /Users/anthony/Entrega_05/GestionandoFichajes/src/com/clases/Equipo.java...
+Loading source file /Users/anthony/Entrega_05/GestionandoFichajes/src/com/clases/Jugador.java...
+Loading source file /Users/anthony/Entrega_05/GestionandoFichajes/src/com/clases/Presidente.java...
+Loading source file /Users/anthony/Entrega_05/GestionandoFichajes/src/com/enums/Formacion.java...
+Loading source file /Users/anthony/Entrega_05/GestionandoFichajes/src/com/enums/Posicion.java...
+Loading source file /Users/anthony/Entrega_05/GestionandoFichajes/src/com/enums/Traspaso.java...
+Constructing Javadoc information...
+Building index for all the packages and classes...
+Standard Doclet version 23.0.2+7-58
+Building tree for all the packages and classes...
+Generating /Users/anthony/Entrega_05/javadoc/com/App.html...
+/Users/anthony/Entrega_05/GestionandoFichajes/src/com/App.java:33: warning: no @param for args
+        public static void main(String[] args) throws Exception {
+                           ^
+/Users/anthony/Entrega_05/GestionandoFichajes/src/com/App.java:33: warning: no @throws for java.lang.Exception
+        public static void main(String[] args) throws Exception {
+                           ^
+/Users/anthony/Entrega_05/GestionandoFichajes/src/com/App.java:15: warning: use of default constructor, which does not provide a comment
+public class App {
+       ^
+Generating /Users/anthony/Entrega_05/javadoc/com/clases/Entrenador.html...
+Generating /Users/anthony/Entrega_05/javadoc/com/clases/Equipo.html...
+Generating /Users/anthony/Entrega_05/javadoc/com/enums/Formacion.html...
+/Users/anthony/Entrega_05/GestionandoFichajes/src/com/enums/Formacion.java:6: warning: no comment
+    _443,_333,_352,_541,ninguna;
+         ^
+/Users/anthony/Entrega_05/GestionandoFichajes/src/com/enums/Formacion.java:6: warning: no comment
+    _443,_333,_352,_541,ninguna;
+              ^
+/Users/anthony/Entrega_05/GestionandoFichajes/src/com/enums/Formacion.java:6: warning: no comment
+    _443,_333,_352,_541,ninguna;
+    ^
+/Users/anthony/Entrega_05/GestionandoFichajes/src/com/enums/Formacion.java:6: warning: no comment
+    _443,_333,_352,_541,ninguna;
+                   ^
+/Users/anthony/Entrega_05/GestionandoFichajes/src/com/enums/Formacion.java:6: warning: no comment
+    _443,_333,_352,_541,ninguna;
+                        ^
+Generating /Users/anthony/Entrega_05/javadoc/com/clases/Jugador.html...
+Generating /Users/anthony/Entrega_05/javadoc/com/enums/Posicion.html...
+/Users/anthony/Entrega_05/GestionandoFichajes/src/com/enums/Posicion.java:6: warning: no comment
+    Portero, Defensa, Delantero,Banca;
+                                ^
+/Users/anthony/Entrega_05/GestionandoFichajes/src/com/enums/Posicion.java:6: warning: no comment
+    Portero, Defensa, Delantero,Banca;
+             ^
+/Users/anthony/Entrega_05/GestionandoFichajes/src/com/enums/Posicion.java:6: warning: no comment
+    Portero, Defensa, Delantero,Banca;
+                      ^
+/Users/anthony/Entrega_05/GestionandoFichajes/src/com/enums/Posicion.java:6: warning: no comment
+    Portero, Defensa, Delantero,Banca;
+    ^
+Generating /Users/anthony/Entrega_05/javadoc/com/clases/Presidente.html...
+Generating /Users/anthony/Entrega_05/javadoc/com/enums/Traspaso.html...
+/Users/anthony/Entrega_05/GestionandoFichajes/src/com/enums/Traspaso.java:6: warning: no comment
+    Sin_solicitar, Solicitado, Aprobado_por_entrenador, Aprobado_por_presidente, Rechazado_por_entrenador,
+                               ^
+/Users/anthony/Entrega_05/GestionandoFichajes/src/com/enums/Traspaso.java:6: warning: no comment
+    Sin_solicitar, Solicitado, Aprobado_por_entrenador, Aprobado_por_presidente, Rechazado_por_entrenador,
+                                                        ^
+/Users/anthony/Entrega_05/GestionandoFichajes/src/com/enums/Traspaso.java:6: warning: no comment
+    Sin_solicitar, Solicitado, Aprobado_por_entrenador, Aprobado_por_presidente, Rechazado_por_entrenador,
+                                                                                 ^
+/Users/anthony/Entrega_05/GestionandoFichajes/src/com/enums/Traspaso.java:7: warning: no comment
+    Rechazado_por_presidente;
+    ^
+/Users/anthony/Entrega_05/GestionandoFichajes/src/com/enums/Traspaso.java:6: warning: no comment
+    Sin_solicitar, Solicitado, Aprobado_por_entrenador, Aprobado_por_presidente, Rechazado_por_entrenador,
+    ^
+/Users/anthony/Entrega_05/GestionandoFichajes/src/com/enums/Traspaso.java:6: warning: no comment
+    Sin_solicitar, Solicitado, Aprobado_por_entrenador, Aprobado_por_presidente, Rechazado_por_entrenador,
+                   ^
+Generating /Users/anthony/Entrega_05/javadoc/com/package-summary.html...
+Generating /Users/anthony/Entrega_05/javadoc/com/package-tree.html...
+Generating /Users/anthony/Entrega_05/javadoc/com/clases/package-summary.html...
+Generating /Users/anthony/Entrega_05/javadoc/com/clases/package-tree.html...
+Generating /Users/anthony/Entrega_05/javadoc/com/enums/package-summary.html...
+Generating /Users/anthony/Entrega_05/javadoc/com/enums/package-tree.html...
+Generating /Users/anthony/Entrega_05/javadoc/overview-tree.html...
+Generating /Users/anthony/Entrega_05/javadoc/index.html...
+Generating /Users/anthony/Entrega_05/javadoc/allclasses-index.html...
+Building index for all classes...
+Generating /Users/anthony/Entrega_05/javadoc/allpackages-index.html...
+Generating /Users/anthony/Entrega_05/javadoc/index-all.html...
+Generating /Users/anthony/Entrega_05/javadoc/search.html...
+Generating /Users/anthony/Entrega_05/javadoc/overview-summary.html...
+Generating /Users/anthony/Entrega_05/javadoc/help-doc.html...
+18 warnings
+
+
