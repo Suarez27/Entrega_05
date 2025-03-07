@@ -2,7 +2,6 @@ package com.clases;
 
 import com.enums.*;
 import java.util.ArrayList;
-import com.clases.*;
 
 /**
  * Representa un equipo de fútbol con nombre, abreviatura, presidente,
@@ -60,52 +59,6 @@ public class Equipo {
             }
         }
         System.out.println("Se han reseteado los estados de traspaso en el equipo " + Nombre);
-    }
-
-    /**
-     * Permite que el entrenador del equipo decida sobre un traspaso de un jugador.
-     * 
-     * @param jugador Jugador sobre el cual se tomará la decisión.
-     * @param acepta  Indica si el entrenador aprueba el traspaso.
-     */
-    public void decidirTraspasoEntrenador(Jugador jugador, boolean acepta) {
-        if (jugador.getEquipo_id() != this) {
-            System.out
-                    .println("Error: El entrenador de " + Nombre + " no puede decidir sobre jugadores de otro equipo.");
-            return;
-        }
-
-        if (jugador.getTraspaso() == Traspaso.Solicitado) {
-            jugador.setTraspaso(acepta ? Traspaso.Aprobado_por_entrenador : Traspaso.Rechazado_por_entrenador);
-            System.out.println(
-                    "El entrenador ha decidido el traspaso de " + jugador.getNombre() + ": " + jugador.getTraspaso());
-        } else {
-            System.out.println(
-                    "No se puede decidir el traspaso de " + jugador.getNombre() + ", aun no ha sido solicitado.");
-        }
-    }
-
-    /**
-     * Permite que el presidente del equipo decida sobre un traspaso de un jugador.
-     * 
-     * @param jugador Jugador sobre el cual se tomará la decisión.
-     * @param acepta  Indica si el presidente aprueba el traspaso.
-     */
-    public void decidirTraspasoPresidente(Jugador jugador, boolean acepta) {
-        if (jugador.getEquipo_id() != this) {
-            System.out
-                    .println("Error: El presidente de " + Nombre + " no puede decidir sobre jugadores de otro equipo.");
-            return;
-        }
-
-        if (jugador.getTraspaso() == Traspaso.Aprobado_por_entrenador) {
-            jugador.setTraspaso(acepta ? Traspaso.Aprobado_por_presidente : Traspaso.Rechazado_por_presidente);
-            System.out.println(
-                    "El presidente ha decidido el traspaso de " + jugador.getNombre() + ": " + jugador.getTraspaso());
-        } else {
-            System.out.println("El presidente no puede decidir el traspaso de " + jugador.getNombre()
-                    + " porque el entrenador aun no lo ha aprobado.");
-        }
     }
 
     /**
