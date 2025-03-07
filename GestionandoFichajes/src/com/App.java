@@ -31,13 +31,13 @@ public class App {
          * Método principal que ejecuta el sistema de gestión de equipos y jugadores.
          */
         public static void main(String[] args) throws Exception {
-                Presidente p1 = new Presidente("43234401B", "Joan Laporta", null);
-                Presidente p2 = new Presidente("34565543L", "Florentino Pérez", null);
-                Presidente p3 = new Presidente("23434456M", "Enrrique Cerezo Torres", null);
+                // Presidente p1 = new Presidente("43234401B", "Joan Laporta", null);
+                // Presidente p2 = new Presidente("34565543L", "Florentino Pérez", null);
+                // Presidente p3 = new Presidente("23434456M", "Enrrique Cerezo Torres", null);
 
-                Entrenador e1 = new Entrenador("Hansi Flick", Formacion._352, null);
-                Entrenador e2 = new Entrenador("Carlo Ancelotti", Formacion._333, null);
-                Entrenador e3 = new Entrenador("Diego Simeone", Formacion._443, null);
+                // Entrenador e1 = new Entrenador("Hansi Flick", Formacion._352, null);
+                // Entrenador e2 = new Entrenador("Carlo Ancelotti", Formacion._333, null);
+                // Entrenador e3 = new Entrenador("Diego Simeone", Formacion._443, null);
 
                 Equipo Team1 = new Equipo("Barcelona", "FBC", null, null, null);
                 Equipo Team2 = new Equipo("RealMadrid", "RMCF", null, null, null);
@@ -70,25 +70,25 @@ public class App {
                 jugadoresAtleti.add(j5);
                 jugadoresAtleti.add(j6);
 
-                Team1.setPresidente_id(p1);
-                Team1.setEntrenador_id(e1);
+                // Team1.setPresidente_id(p1);
+                // Team1.setEntrenador_id(e1);
                 Team1.setJugadores_lista(jugadoresBarcelona);
 
-                Team2.setPresidente_id(p2);
-                Team2.setEntrenador_id(e2);
+                // Team2.setPresidente_id(p2);
+                // Team2.setEntrenador_id(e2);
                 Team2.setJugadores_lista(jugadoresRealMadrid);
 
-                Team3.setPresidente_id(p3);
-                Team3.setEntrenador_id(e3);
+                // Team3.setPresidente_id(p3);
+                // Team3.setEntrenador_id(e3);
                 Team3.setJugadores_lista(jugadoresAtleti);
 
-                p1.setEquipo_id(Team1);
-                p2.setEquipo_id(Team2);
-                p3.setEquipo_id(Team3);
+                // p1.setEquipo_id(Team1);
+                // p2.setEquipo_id(Team2);
+                // p3.setEquipo_id(Team3);
 
-                e1.setEquipo_id(Team1);
-                e2.setEquipo_id(Team2);
-                e3.setEquipo_id(Team3);
+                // e1.setEquipo_id(Team1);
+                // e2.setEquipo_id(Team2);
+                // e3.setEquipo_id(Team3);
 
                 j1.setEquipo_id(Team1);
                 j2.setEquipo_id(Team1);
@@ -99,8 +99,7 @@ public class App {
 
                 // Souts para probar ToString
                 System.out.println(Team1);
-                System.out.println(p1);
-                System.out.println(e1);
+                // System.out.println(p1);
                 System.out.println(j1);
 
                 System.out.println();
