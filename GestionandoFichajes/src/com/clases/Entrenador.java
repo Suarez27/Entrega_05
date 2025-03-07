@@ -1,15 +1,17 @@
 package com.clases;
 
-import com.enums.*;
+import java.text.Normalizer.Form;
+import java.util.Date;
+
+ import com.enums.*;
 
 /**
  * Representa a un entrenador de un equipo.
  * Contiene información sobre su nombre, formación táctica y equipo actual.
  */
-public class Entrenador {
-    private String Nombre;
-    private Formacion Formacion;
+public class Entrenador extends Trabajador {
 
+    private Formacion Formacion;
     private Equipo Equipo_id;
 
     /** Contador estático para el total de entrenadores creados. */
@@ -18,25 +20,24 @@ public class Entrenador {
     /**
      * Constructor de la clase Entrenador.
      * 
-     * @param nombre_entrenador   Nombre del entrenador.
      * @param formacionEntrenador Formación táctica preferida del entrenador.
      * @param equipoEntrenador    Equipo al que pertenece el entrenador.
      */
-    public Entrenador(String nombre_entrenador, Formacion formacionEntrenador, Equipo equipoEntrenador) {
-        if (nombre_entrenador != null) {
-            this.Nombre = nombre_entrenador;
-        } else {
-            System.out.println("Error: El nombre no debe ser Null");
-            this.Nombre = "Desconocido";
-        }
-
-        if (formacionEntrenador != null) {
-            this.Formacion = formacionEntrenador;
-        } else {
-            System.out.println("Error: la formacion es incorrecta");
-            this.Formacion = Formacion.ninguna;
-        }
+    public Entrenador(String nombre_entrenador, Date fechaNacimientoEntrenador, String paisEntrenador,
+    Formacion formacionEntrenador, Equipo equipoEntrenador) {
+    super(nombre_entrenador, fechaNacimientoEntrenador, paisEntrenador);
+    if (formacionEntrenador != null) {
+        this.Formacion = formacionEntrenador;
+    } else {
+        System.out.println("Error: la formacion es incorrecta");
+        this.Formacion = Formacion.ninguna;
+    }
         totalEntrenadores++;
+    }
+
+    @Override
+    public void mostrarInfo(){
+        System.out.println("Mi nombres es: " + nombre + " Soy un Entrenador");
     }
 
     /**
@@ -47,29 +48,7 @@ public class Entrenador {
     public static int getTotalEntrenadores() {
         return totalEntrenadores;
     }
-
-    /**
-     * Obtiene el nombre del entrenador.
-     * 
-     * @return Nombre del entrenador.
-     */
-    public String getNombre() {
-        return Nombre;
-    }
-
-    /**
-     * Establece el nombre del entrenador.
-     * 
-     * @param nombre Nuevo nombre del entrenador.
-     */
-    public void setNombre(String nombre) {
-        if (nombre != null) {
-            this.Nombre = nombre;
-        } else {
-            System.out.println("Error, nombre no valido");
-        }
-    }
-
+  
     /**
      * Obtiene la formación táctica preferida del entrenador.
      * 
@@ -119,10 +98,12 @@ public class Entrenador {
      * 
      * @return Cadena con los datos del entrenador.
      */
-    @Override
+  @Override
     public String toString() {
         String entrenadorEquipo = (Equipo_id != null) ? Equipo_id.getNombre() : "Sin equipo";
-        return "Entrenador [Nombre=" + Nombre + ", Formacion=" + Formacion + ", Equipo_id=" + entrenadorEquipo
-                + "]";
+        return "Entrenador [Formacion=" + Formacion + ", Equipo_id=" + entrenadorEquipo + ", Nombre=" + getNombre()
+                + ", FechaNacimientoTrabajador=" + getFechaNacimientoTrabajador() + ", PaisOrigen="
+                + getPaisOrigen() + "]";
     }
+
 }

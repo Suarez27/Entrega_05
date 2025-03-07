@@ -1,16 +1,13 @@
 package com.clases;
-
 import com.enums.*;
+import java.util.Date;
 import com.clases.*;
-
 /**
  * Representa a un presidente de un equipo de fútbol con atributos como DNI,
  * nombre y el equipo al que pertenece.
  */
-public class Presidente {
+public class Presidente extends Trabajador{
     private String DNI;
-    private String Nombre;
-
     private Equipo Equipo_id;
     /** Contador estático para el total de presidentes creados. */
     private static int totalPresidentes = 0;
@@ -19,10 +16,11 @@ public class Presidente {
      * Constructor de la clase Presidente.
      * 
      * @param dni_presidente    DNI del presidente.
-     * @param nombre_presidente Nombre del presidente.
      * @param equipo_presidente Equipo del presidente.
      */
-    public Presidente(String dni_presidente, String nombre_presidente, Equipo equipo_presidente) {
+    
+    public Presidente(String dni_presidente,Date fechaNacimientoPresidente, String nombre_presidente, Equipo equipo_presidente) {
+        super(nombre_presidente, fechaNacimientoPresidente, nombre_presidente);
         if (dni_presidente != null) {
             this.DNI = dni_presidente;
         } else {
@@ -30,13 +28,12 @@ public class Presidente {
             this.DNI = "Desconocido";
         }
 
-        if (nombre_presidente != null) {
-            this.Nombre = nombre_presidente;
-        } else {
-            System.out.println("Error: El nombre no debe ser Null");
-            this.Nombre = "Desconocido";
-        }
         totalPresidentes++;
+    }
+
+    @Override
+    public void mostrarInfo(){
+        System.out.println("Mi nombres es: " + nombre + " Soy un Presidente");
     }
 
     /**
@@ -70,33 +67,12 @@ public class Presidente {
         }
     }
 
-    /**
-     * Obtiene el nombre del presidente.
-     * 
-     * @return Nombre del presidente.
-     */
-    public String getNombre() {
-        return Nombre;
-    }
-
-    /**
-     * Establece el nombre del presidente.
-     * 
-     * @param nombre Nuevo nombre del presidente.
-     */
-    public void setNombre(String nombre) {
-        if (nombre != null) {
-            this.Nombre = nombre;
-        } else {
-            System.out.println("Error, nombre no valido");
-        }
-    }
-
-    /**
+      /**
      * Obtiene el equipo al que pertenece el presidente.
      * 
      * @return Equipo del presidente.
      */
+
     public Equipo getEquipo_id() {
         return Equipo_id;
     }
@@ -119,10 +95,14 @@ public class Presidente {
      * 
      * @return Cadena con los datos del presidente.
      */
+    
     @Override
     public String toString() {
         String presidenteEquipo = (Equipo_id != null) ? Equipo_id.getNombre() : "Sin equipo";
-        return "Presidente [DNI=" + DNI + ", Nombre=" + Nombre + ", Equipo_id=" + presidenteEquipo + "]";
+        return "Presidente [DNI=" + DNI + ", Equipo_id=" + presidenteEquipo + ", Nombre=" + getNombre()
+                + ", FechaNacimientoTrabajador=" + getFechaNacimientoTrabajador() + ", PaisOrigen="
+                + getPaisOrigen() + "]";
     }
+
 
 }

@@ -1,18 +1,15 @@
 package com.clases;
 
-import com.enums.*;
-import com.clases.*;
 import java.util.Date;
+import com.enums.*;
 
 /**
  * Representa a un jugador de fútbol con atributos como nombre, fecha de
  * nacimiento,
  * país, posición, dorsal, estado de traspaso y el equipo al que pertenece.
  */
-public class Jugador {
-    private String Nombre;
-    private Date FechaNacimiento;
-    private String Pais;
+public class Jugador extends Trabajador {
+    
     private Posicion Posicion;
     private int Dorsal;
     private Traspaso Traspaso;
@@ -24,37 +21,18 @@ public class Jugador {
     /**
      * Constructor de la clase Jugador.
      * 
-     * @param nombreJugador          Nombre del jugador.
-     * @param fechaNacimientoJugador Fecha de nacimiento del jugador.
-     * @param paisJugador            País de origen del jugador.
      * @param posicionJugador        Posición en la que juega el jugador.
      * @param dorsalJugador          Número del dorsal del jugador.
      * @param traspasoJugador        Estado de traspaso del jugador.
      * @param equipoJugador          Equipo al que pertenece el jugador.
      */
+
     public Jugador(String nombreJugador, Date fechaNacimientoJugador, String paisJugador, Posicion posicionJugador,
             int dorsalJugador,
             Traspaso traspasoJugador, Equipo equipoJugador) {
-        if (nombreJugador != null) {
-            this.Nombre = nombreJugador;
-        } else {
-            System.out.println("Error: El nombre no debe ser Null");
-            this.Nombre = "Desconocido";
-        }
-        if (fechaNacimientoJugador != null) {
-            this.FechaNacimiento = fechaNacimientoJugador;
-        } else {
-            System.out.println("Error: La fecha no debe ser Null");
-            this.FechaNacimiento = new Date();
-        }
+            super(nombreJugador, fechaNacimientoJugador, paisJugador);
 
-        if (paisJugador != null) {
-            this.Pais = paisJugador;
-        } else {
-            System.out.println("Error: El pais no debe ser Null");
-            this.Pais = "Desconocido";
-        }
-
+            
         if (posicionJugador != null) {
             this.Posicion = posicionJugador;
         } else {
@@ -78,6 +56,11 @@ public class Jugador {
         totalJugadores++;
     }
 
+    @Override
+    public void mostrarInfo(){
+        System.out.println("Mi nombres es: " + nombre + " Soy un Jugador");
+    }
+
     /**
      * Obtiene el total de jugadores creados.
      * 
@@ -85,72 +68,6 @@ public class Jugador {
      */
     public static int getTotalJugadores() {
         return totalJugadores;
-    }
-
-    /**
-     * Obtiene el nombre del jugador.
-     * 
-     * @return Nombre del jugador.
-     */
-    public String getNombre() {
-        return this.Nombre;
-    }
-
-    /**
-     * Establece el nombre del jugador.
-     * 
-     * @param nombre Nuevo nombre del jugador.
-     */
-    public void setNombre(String nombre) {
-        if (nombre != null) {
-            this.Nombre = nombre;
-        } else {
-            System.out.println("Error, nombre no valido");
-        }
-    }
-
-    /**
-     * Obtiene la fecha de nacimiento del jugador.
-     * 
-     * @return Fecha de nacimiento del jugador.
-     */
-    public Date getFechaNacimiento() {
-        return FechaNacimiento;
-    }
-
-    /**
-     * Establece la fecha de nacimiento del jugador.
-     * 
-     * @param fechaNacimiento Nueva fecha de nacimiento del jugador.
-     */
-    public void setFechaNacimiento(Date fechaNacimiento) {
-        if (fechaNacimiento != null) {
-            this.FechaNacimiento = fechaNacimiento;
-        } else {
-            System.out.println("Error, fecha no valido");
-        }
-    }
-
-    /**
-     * Obtiene el país de origen del jugador.
-     * 
-     * @return País del jugador.
-     */
-    public String getPais() {
-        return Pais;
-    }
-
-    /**
-     * Establece el país de origen del jugador.
-     * 
-     * @param pais Nuevo país del jugador.
-     */
-    public void setPais(String pais) {
-        if (pais != null) {
-            this.Pais = pais;
-        } else {
-            System.out.println("Error, pais no valido");
-        }
     }
 
     /**
@@ -246,11 +163,12 @@ public class Jugador {
      * 
      * @return Cadena con los datos del jugador.
      */
+    
     @Override
     public String toString() {
         String equipoNombre = (Equipo_id != null) ? Equipo_id.getNombre() : "Sin equipo";
-        return "Jugador [Nombre=" + Nombre + ", FechaNacimiento=" + FechaNacimiento + ", Pais=" + Pais + ", Posicion="
-                + Posicion + ", Dorsal=" + Dorsal + ", Traspaso=" + Traspaso + ", Equipo_id=" + equipoNombre
-                + "]";
+        return "Jugador [Posicion=" + Posicion + ", Dorsal=" + Dorsal + ", Traspaso=" + Traspaso + ", Equipo_id="
+                + equipoNombre + ", Nombre=" + getNombre() + ", FechaNacimientoTrabajador="
+                + getFechaNacimientoTrabajador() + ", PaisOrigen=" + getPaisOrigen() + "]";
     }
 }
