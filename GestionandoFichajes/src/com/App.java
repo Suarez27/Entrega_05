@@ -33,16 +33,16 @@ public class App {
         public static void main(String[] args) throws Exception {
         Presidente p1 = new Presidente("43234401B", generarFechaNacimiento(2000, 2, 2), "Peru", "Joan Laporta",
                                 null);
-        Presidente p2 = new Presidente("34565543L", generarFechaNacimiento(2000, 2, 2), "Peru",
+        Presidente p2 = new Presidente("34565543L", generarFechaNacimiento(2000, 2, 2), "Argentina",
                                 "Florentino Pérez", null);
-        Presidente p3 = new Presidente("23434456M", generarFechaNacimiento(2000, 2, 2), "Peru",
+        Presidente p3 = new Presidente("23434456M", generarFechaNacimiento(2000, 2, 2), "Ecuador",
                                 "Enrrique Cerezo Torres", null);
 
-        Entrenador e1 = new Entrenador("Hansi Flick", generarFechaNacimiento(2000, 2, 2), "Peru",
+        Entrenador e1 = new Entrenador("Hansi Flick", generarFechaNacimiento(2000, 2, 2), "Alemania",
                                 Formacion._352, null);
-        Entrenador e2 = new Entrenador("Carlo Ancelotti", generarFechaNacimiento(2000, 2, 2), "Peru",
+        Entrenador e2 = new Entrenador("Carlo Ancelotti", generarFechaNacimiento(2000, 2, 2), "Francia",
                                 Formacion._333, null);
-        Entrenador e3 = new Entrenador("Diego Simeone", generarFechaNacimiento(2000, 2, 2), "Peru",
+        Entrenador e3 = new Entrenador("Diego Simeone", generarFechaNacimiento(2000, 2, 2), "España",
                                 Formacion._443, null);
 
         Equipo Team1 = new Equipo("Barcelona", "FBC", null, null, null);
@@ -168,9 +168,10 @@ public class App {
         System.out.println();
 
         // CONTEO DE OBJETOS CREADOS PARA CADA CLASE
-        // System.out.println("Total de jugadores creados: " + Jugador.getTotalJugadores());
-        // System.out.println("Total de presidentes creados: " + Presidente.getTotalPresidentes());
-        // System.out.println("Total de entrenadores creados: " + Entrenador.getTotalEntrenadores());
-        // System.out.println("Total de equipos creados: " + Equipo.getTotalEquipos());
-        }
+        System.out.println("Total de trabajadores creados: " + Trabajador.getTotalTrabajadores());
+        System.out.println("Total de jugadores creados: " + Jugador.getTotalJugadores());
+        System.out.println("Total de presidentes creados: " + Presidente.getTotalPresidentes());
+        System.out.println("Total de entrenadores creados: " + Entrenador.getTotalEntrenadores());
+        System.out.println("Total de equipos creados: " + Equipo.getTotalEquipos());
+}
 }

@@ -32,14 +32,14 @@ public class Equipo {
         if (nombre_equipo != null) {
             this.Nombre = nombre_equipo;
         } else {
-            System.out.println("Error: El nombre no debe ser Null");
+            System.out.println("Error, El nombre no debe ser Null");
             this.Nombre = "Desconocido";
         }
 
         if (abreviatura_equipo != null) {
             this.Abreviatura = abreviatura_equipo;
         } else {
-            System.out.println("Error: La abreviatura no debe ser Null");
+            System.out.println("Error, La abreviatura no debe ser Null");
             this.Abreviatura = "Desconocido";
         }
         totalEquipos++;
