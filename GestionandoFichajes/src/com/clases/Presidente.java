@@ -2,11 +2,12 @@ package com.clases;
 import com.enums.*;
 import java.util.Date;
 import com.clases.*;
+import com.interfaces.*;
 /**
  * Representa a un presidente de un equipo de fútbol con atributos como DNI,
  * nombre y el equipo al que pertenece.
  */
-public class Presidente extends Trabajador{
+public class Presidente extends Trabajador implements GestorTraspasos{
     private String DNI;
     private Equipo Equipo_id;
     /** Contador estático para el total de presidentes creados. */
@@ -19,8 +20,9 @@ public class Presidente extends Trabajador{
      * @param equipo_presidente Equipo del presidente.
      */
     
-    public Presidente(String dni_presidente,Date fechaNacimientoPresidente, String nombre_presidente, Equipo equipo_presidente) {
-        super(nombre_presidente, fechaNacimientoPresidente, nombre_presidente);
+    public Presidente(String dni_presidente, Date fechaNacimientoPresidente, String paisEntrenador,
+    String nombre_presidente, Equipo equipo_presidente) {
+        super(nombre_presidente, fechaNacimientoPresidente, paisEntrenador);
         if (dni_presidente != null) {
             this.DNI = dni_presidente;
         } else {
@@ -34,6 +36,33 @@ public class Presidente extends Trabajador{
     @Override
     public void mostrarInfo(){
         System.out.println("Mi nombres es: " + nombre + " Soy un Presidente");
+    }
+    @Override
+    public void aprobarTraspaso(Jugador jugador, Equipo equipo) {
+        if (jugador.getEquipo_id() != equipo) {
+            System.out.println("Error, el presidente no puede aprobar traspasos de jugadores de otros equipos.");
+            return;
+        }
+
+        if (jugador.getTraspaso() == Traspaso.Aprobado_por_entrenador) {
+            jugador.setTraspaso(Traspaso.Aprobado_por_presidente);
+            System.out.println(
+                    "El presidente ha decidido el traspaso de " + jugador.getNombre() + ": " + jugador.getTraspaso());
+        } else {
+            System.out.println("Error, el presidente no puede aprobar el traspaso de " + jugador.getNombre() +
+                    " porque el entrenador aún no lo ha aprobado");
+        }
+    }
+
+    @Override
+    public void rechazarTraspaso(Jugador jugador, Equipo equipo) {
+        if (jugador.getEquipo_id() != equipo) {
+            System.out.println("Error, el presidente no puede rechazar traspasos de jugadores de otros equipos.");
+            return;
+        }
+
+        jugador.setTraspaso(Traspaso.Rechazado_por_presidente);
+        System.out.println("Error, el presidente ha rechazado el traspaso de " + jugador.getNombre());
     }
 
     /**
